@@ -1,0 +1,27 @@
+<<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/MouseMoveStyle.css" rel="stylesheet">
+        <script>
+            window.onload = function() {
+                let h1 = document.getElementsByTagName("h1")[0];
+                let cursorItem = document.getElementsByClassName("cursor_item")[0];
+                window.addEventListener("mousemove", mousefunc, false);
+        
+                    function mousefunc(e) {
+                        h1.innerHTML = "x : " + e.clientX + " y : " + e.clientY 
+                        cursorItem.style.transform = "translate("+e.clientX+"px," + e.clientY+"px)"
+                        console.log(e.clientX, e.clientY);
+                    }
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1>test</h1>
+        <div class = "cursor_item"></div>
+    </body>
+</html>
