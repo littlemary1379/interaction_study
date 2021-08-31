@@ -6,22 +6,44 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/MouseMoveStyle.css" rel="stylesheet">
         <script>
+
+            let cursorItem;
+            let h1;
+
+            let x = 0;
+            let y = 0;
+            let mx = 0;
+            let my = 0;
+            let speed = 0.06;
+
             window.onload = function() {
-                let h1 = document.getElementsByTagName("h1")[0];
-                let cursorItem = document.getElementsByClassName("cursor_item")[0];
-                window.addEventListener("mousemove", mousefunc, false);
+                h1 = document.getElementsByTagName("h1")[0];
+                cursorItem = document.getElementsByClassName("cursor_item")[0];
+                window.addEventListener("click", mousefunc, false);
         
                     function mousefunc(e) {
-                        h1.innerHTML = "x : " + e.clientX + " y : " + e.clientY 
-                        cursorItem.style.transform = "translate("+e.clientX+"px," + e.clientY+"px)"
-                        console.log(e.clientX, e.clientY);
+                        x=  e.clientX;
+                        y=  e.clientY;
+                        cursorItem.style.transform = "translate("+x+"px," + y+"px)";
                     }
-            }
 
+                    //loop();
+            }
+            
+            function loop() {
+                mx += (x - mx) * speed;
+                my += (y - my) * speed;
+
+                h1.innerHTML = "x : " + x + " mx : " + mx ;
+                cursorItem.style.transform = "translate("+mx+"px," + my+"px)";
+                window.requestAnimationFrame(loop);
+            }
+            
         </script>
     </head>
     <body>
-        <h1>test</h1>
+        <!-- <h1>test</h1> -->
         <div class = "cursor_item"></div>
+        <button type="button">START</button>
     </body>
 </html>

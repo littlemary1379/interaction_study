@@ -1,7 +1,7 @@
 body {
     position: relative;
     background-color: black;
-    cursor: none;
+    /* cursor: none; */
 }
 
 h1 {
@@ -9,10 +9,30 @@ h1 {
 }
 
 .cursor_item {
-    position: absolute;
+    position: fixed;
     width: 100px;
     height: 100px;
     background-color: pink;
     top: 0;
     bottom: 0;
+    margin:  -50px 0 0 -50px;
+    transition: all 1s cubic-bezier(0.340, -0.600, 0.515, 1.570); /* custom */
+}
+
+button {
+    font-size: 40px;
+    font-weight: bold;
+    background: #fff;
+    color: red;
+    padding: 30px 30px;
+    margin: 50px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+button:hover {
+    background: red;
+    color: white;
+    font-size: 50px;
+    padding: 80px 150px;
 }
