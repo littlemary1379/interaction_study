@@ -2,13 +2,14 @@ body {
     position: relative;
     background-color: black;
     /* cursor: none; */
+    overflow: hidden;
 }
 
 h1 {
     color: #fff;
 }
 
-.cursor_item {
+/* .cursor_item {
     position: fixed;
     width: 100px;
     height: 100px;
@@ -16,10 +17,9 @@ h1 {
     top: 0;
     bottom: 0;
     margin:  -50px 0 0 -50px;
-    transition: all 1s cubic-bezier(0.340, -0.600, 0.515, 1.570); /* custom */
-}
+    transition: all 1s cubic-bezier(0.340, -0.600, 0.515, 1.570); } */
 
-button {
+/* button {
     font-size: 40px;
     font-weight: bold;
     background: #fff;
@@ -28,11 +28,41 @@ button {
     margin: 50px;
     cursor: pointer;
     transition: all .5s ease;
-}
+} */
 
-button:hover {
+/* button:hover {
     background: red;
     color: white;
     font-size: 50px;
     padding: 80px 150px;
+} */
+
+.humanImg {
+    position: absolute;
+    left: calc(50% - 150px);
+    width : 300px;
+    z-index: 100;
+}
+
+.background {
+    width : 120%;
+}
+
+.pipe {
+    position: absolute;
+    z-index: 100;
+    width: 700px;
+    top: 10%;
+    left: -200px;
+}
+
+.textWrap {
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,0);
+    width: 60%;
+    z-index: 1;
+    transform-style: preserve-3d;
+    perspective: 300px;
 }
