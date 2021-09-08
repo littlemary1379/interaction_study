@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>스크롤</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/ScrollStyle.css" rel="stylesheet">
+        <script>
+            let scrollTop = 0;
+            let bar;
+
+            window.addEventListener("scroll", function(e) {
+                scrollTop = document.documentElement.scrollTop;
+                // console.log(scrollTop)
+                //let per = Math.ceil(scrollTop / document.body.scrollHeight * 100)
+                let per = scrollTop / (document.body.scrollHeight - window.outerHeight) * 100 
+                console.log(per)
+
+                bar.style.width = per + "%"
+            }, false)
+
+            window.onload = function() {
+                bar = document.getElementsByClassName("bar")[0];
+            }
+        </script>
+    </head>
+    <body>
+        <h1>scroll</h1>
+        <div class = "progress">
+            <span class = "bar"></span>
+        </div>
+    </body>
+</html>
